@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox1
+  template:
+    metadata:
+      labels:
+        app: busybox1
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command:
+            - "/bin/sh"
+            - "-c"
+            - "sleep 5; echo 'message from busybox1'"
