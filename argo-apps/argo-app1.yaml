@@ -9,8 +9,7 @@ spec:
     namespace: argocd
   project: default
   sources:
-    - source:
-      repoURL: https://github.com/chengfang/multi-source-cmp.git
+    - repoURL: https://github.com/chengfang/multi-source-cmp.git
       targetRevision: HEAD
       path: apps/source1
       plugin:
@@ -18,8 +17,7 @@ spec:
         env:
           - name: FOO
             value: "yes"
-    - source:
-      repoURL: https://github.com/chengfang/multi-source-cmp.git
+    - repoURL: https://github.com/chengfang/multi-source-cmp.git
       targetRevision: HEAD
       path: apps/source2
   syncPolicy:
