@@ -13,6 +13,7 @@ spec:
       labels:
         app: busybox1
     spec:
+      restartPolicy: OnFailure
       containers:
         - name: busybox
           image: busybox

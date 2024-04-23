@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-app1
+  name: multi-source-app-with-plugin
   namespace: argocd
 spec:
   destination:
@@ -13,7 +13,7 @@ spec:
       targetRevision: HEAD
       path: apps/source1
       plugin:
-        name: cmp-plugin-config
+        name: cmp-plugin-config-v1.0
         env:
           - name: FOO
             value: "yes"

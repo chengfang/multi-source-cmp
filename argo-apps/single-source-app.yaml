@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: single-source-app
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: argocd
+  project: default
+  source:
+    repoURL: https://github.com/chengfang/multi-source-cmp.git
+    targetRevision: HEAD
+    path: apps/source1
+    plugin:
+      name: cmp-plugin-config-v1.0
+      env:
+        - name: FOO
+          value: "yes"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
