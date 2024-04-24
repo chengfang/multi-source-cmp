@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat2
+  template:
+    metadata:
+      labels:
+        app: tomcat2
+    spec:
+      containers:
+        - name: tomcat
+          image: tomcat
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

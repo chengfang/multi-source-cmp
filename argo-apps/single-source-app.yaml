@@ -12,11 +12,11 @@ spec:
     repoURL: https://github.com/chengfang/multi-source-cmp.git
     targetRevision: HEAD
     path: apps/source1
-    plugin:
-      name: cmp-plugin-config-v1.0
-      env:
-        - name: FOO
-          value: "yes"
+#    plugin:
+#      name: cmp-plugin-config-v1.0
+#      env:
+#        - name: FOO
+#          value: "yes"
   syncPolicy:
     automated:
       prune: true
